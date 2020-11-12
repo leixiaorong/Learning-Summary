@@ -1,0 +1,17 @@
+```
+//一层遍历，不会遍历到下一层
+Object.keys(obj).map(key=>{
+	console.log(key)//这里是对象的key值
+	console.log(obj[key])//这里是key对应的value
+})
+
+//结果
+"_id"
+"2020-11-11"
+"sug"
+ Object {}
+"query"
+ Object {}
+"qv"
+917032
+```
