@@ -8,6 +8,17 @@
 }
 ```
 
+# 抽取公共属性作为公共类
+```less
+.bordered{
+    border: 1px solid black;
+}
+
+#box{
+    .bordered;//转译成 border: 1px solid black;
+}
+```
+
 # 选择器变量
 使用@{...}来表示选择器
 ```less
