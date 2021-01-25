@@ -69,4 +69,40 @@ less也存在变量提升，对于变量的引用不需要考虑顺序
 
 ```
 
-# 其他的语法类
+# 混入 Mixin
+```less
+/* LESS mixin error with (optional) argument @borderWidth which defaults to 2px if not specified */
+.error(@borderWidth: 2px) {
+  border: @borderWidth solid #F00;
+  color: #F00;
+}
+  
+.generic-error {
+  padding: 20px;
+  margin: 4px;
+  .error(); /* Applies styles from mixin error */
+}
+.login-error {
+  left: 12px;
+  position: absolute;
+  top: 20px;
+  .error(5px); /* Applies styles from mixin error with argument @borderWidth equal to 5px */
+}
+```
+# 继承
+# 导入
+# 函数
+# 操作符
+# webpack处理
+```js
+//rules
+module:{
+    rules:[
+        {
+            test: /\.less$/,
+            use: ['style-loader', 'css-loader', 'less-loader']
+            //loader会从右向左去解析，用less编译成css,css-loader加载css文件，style-loader负责将样式添加DOM中
+        }
+    ]
+}
+```
